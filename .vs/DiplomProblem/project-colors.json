@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "2f53a098-4781-409d-8487-98ecab3a51ba": {
+      "ProjectGuid": "2f53a098-4781-409d-8487-98ecab3a51ba",
+      "DisplayName": "Score",
+      "ColorIndex": 0
+    },
+    "5bb6ce80-664b-4b06-98d1-a0564468e6d3": {
+      "ProjectGuid": "5bb6ce80-664b-4b06-98d1-a0564468e6d3",
+      "DisplayName": "AliceAndBob",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
