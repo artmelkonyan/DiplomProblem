@@ -5,7 +5,11 @@
       <FullPath>C:\Users\arthu\source\repos\DiplomProblem\x64\Debug\AliceAndBob.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
-  <ContentFiles />
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>C:\Users\arthu\source\repos\DiplomProblem\AliceAndBob\d.in</FullPath>
+    </ContentFile>
+  </ContentFiles>
   <SatelliteDlls />
   <NonRecipeFileRefs />
 </Project>

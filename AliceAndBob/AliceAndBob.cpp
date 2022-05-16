@@ -3,7 +3,9 @@
 
 #include <iostream>
 #include <fstream>
+#include <array>
 using std::ifstream;
+using std::ofstream;
 using std::cout;
 using std::endl;
 
@@ -16,7 +18,7 @@ public:
     int i, N, M, T, from, tov;
     bool Changed;
     int S[MaxN], Ka[MaxN];
-    unsigned char B[MaxN];
+    unsigned int B[MaxN];
     int a[MaxN][MaxK];
 
     bool exitArc(int i) {
@@ -36,7 +38,7 @@ public:
         bool result = true;
 
         for (int j = 0; j < Ka[i]; j++) {
-            if (S[a[i][j]] == 1) {
+            if (S[a[i][j]] == 0) {
                 result = false;
                 break;
             }
@@ -93,10 +95,19 @@ public:
                 a[i][j] = 0;
     }
 
+    void outputIntoFile() {
+        ofstream outFile;
+        outFile.open("d.out");
+        for (i = 0; i < N; i++) {
+            outFile<< S[i] << " ";
+        }
+        outFile.close();
+    }
+
     void fileInput() {
         init();
         ifstream indata; 
-        indata.open("D:\\example.dat"); 
+        indata.open("d.in"); 
 
         if (!indata) {
             cout << "file couldn't be opened";
@@ -112,17 +123,26 @@ public:
 
         while (!indata.eof()) {
             indata >> from;
-            indata >> tov;
-            from--;
-            tov--;
+            indata >> tov;       
             Ka[from]++;
-            a[from][Ka[from]] = tov;
+            a[from][Ka[from]-1] = tov;
         }
         indata.close();
         for (i = 0; i < N; i++) {
             S[i] = 0;
         }
-        S[T-1] = 1;
+        S[T] = 1;
+    }
+
+    void print() {
+        cout << N << " " << M << " " << T << endl;
+      
+        for (int l = 0; l < N; l++)
+        {
+            cout << B[l] << " ";
+        }
+        cout << endl;
+       
     }
 
     void play() { 
@@ -139,7 +159,7 @@ public:
                  }
              }
          }
-         outputData();
+         outputIntoFile();
     }
 };
 
