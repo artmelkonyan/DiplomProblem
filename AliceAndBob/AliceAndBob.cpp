@@ -117,14 +117,16 @@ public:
         indata >> N;
         indata >> M;
         indata >> T;
-
+        T--;
         for (i = 0; i < N; i++)
             indata >> B[i];
 
         while (!indata.eof()) {
             indata >> from;
+            from--;
             indata >> tov;       
             Ka[from]++;
+            tov--;
             a[from][Ka[from]-1] = tov;
         }
         indata.close();
